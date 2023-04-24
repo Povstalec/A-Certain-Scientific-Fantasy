@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[44,)"
+license="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+#issueTrackerURL="https://github.com/Povstalec/StargateJourney/issues"
+[[mods]]
+modId="toaru"
+version="0.1.0"
+displayName="A Certain Scientific Fantasy"
+logoFile="toaru_large.png"
+credits="-"
+authors="Woldericz_Junior"
+displayTest="MATCH_VERSION"
+
+description='''
+A simple mod based on A Certain Magical Index/A Certain Scientific Railgun series.
+'''
+[[dependencies.toaru]]
+    modId="forge"
+    mandatory=true
+    versionRange="[44,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.toaru]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.3,1.20)"
+    ordering="NONE"
+    side="BOTH"
