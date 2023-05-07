@@ -34,6 +34,11 @@ public class VectorControl extends Ability
 	{
 		Entity attacker = source.getDirectEntity();
 		
+		if(source == DamageSource.IN_WALL || source == DamageSource.DROWN || source == DamageSource.STARVE
+		|| source == DamageSource.OUT_OF_WORLD || source == DamageSource.MAGIC || source == DamageSource.WITHER
+		|| source == DamageSource.FREEZE)
+			return false;
+		
 		if(esper != null && attacker != null)
 		{
 			Vec3 vector = attacker.getBoundingBox().getCenter();

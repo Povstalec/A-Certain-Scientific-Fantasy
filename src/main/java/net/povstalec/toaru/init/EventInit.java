@@ -1,5 +1,6 @@
 package net.povstalec.toaru.init;
 
+import java.util.List;
 import java.util.Optional;
 
 import net.minecraft.resources.ResourceLocation;
@@ -11,6 +12,7 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingKnockBackEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.ExplosionEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.povstalec.toaru.Toaru;
@@ -49,6 +51,14 @@ public class EventInit
 			boolean cancelEvent = optional.isPresent() ? optional.get() : false;
 			event.setCanceled(cancelEvent);
 		}
+	}
+	
+	@SubscribeEvent
+	public static void onDetonate(ExplosionEvent.Detonate event)
+	{
+		List<Entity> affectedEntities = event.getAffectedEntities();
+		
+		List<Entity> avoidedEntities = affectedEntities;
 	}
 	
 	@SubscribeEvent
